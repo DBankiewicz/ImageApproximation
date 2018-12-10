@@ -1,4 +1,3 @@
-package imageProcessing;
 import javafx.scene.Group;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.WritableImage;
