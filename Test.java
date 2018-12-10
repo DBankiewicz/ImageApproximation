@@ -1,4 +1,3 @@
-package imageProcessing;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
@@ -83,13 +82,10 @@ public class Test extends Application {
         for (ConvexPolygon p : ls)
             image.getChildren().add(p);
 
-        // Calcul de la couleur de chaque pixel.Pour cela, on passe par une instance de
-        // WritableImage, qui possède une méthode pour obtenir un PixelReader.
         WritableImage wimg = new WritableImage(maxX,maxY);
         image.snapshot(null,wimg);
         PixelReader pr = wimg.getPixelReader();
 
-        // Stockage de l'image dans un fichier .png
         RenderedImage renderedImage = SwingFXUtils.fromFXImage(wimg, null);
         try {
             ImageIO.write(renderedImage, "png", new File("test.png"));
@@ -98,7 +94,6 @@ public class Test extends Application {
             e1.printStackTrace();
         }
 
-        // affichage de l'image dans l'interface graphique
         Scene scene = new Scene(image, maxX, maxY);
         myStage.setScene(scene);
         myStage.show();
@@ -111,13 +106,10 @@ public class Test extends Application {
         for (ConvexPolygon p : ls)
             image.getChildren().add(p);
 
-        // Calcul de la couleur de chaque pixel.Pour cela, on passe par une instance de
-        // WritableImage, qui possède une méthode pour obtenir un PixelReader.
         WritableImage wimg = new WritableImage(maxX,maxY);
         image.snapshot(null,wimg);
         PixelReader pr = wimg.getPixelReader();
 
-        // Stockage de l'image dans un fichier .png
         RenderedImage renderedImage = SwingFXUtils.fromFXImage(wimg, null);
         try {
             ImageIO.write(renderedImage, "png", new File("result_.png"));
@@ -126,7 +118,6 @@ public class Test extends Application {
             e1.printStackTrace();
         }
 
-        // affichage de l'image dans l'interface graphique
         Scene scene2 = new Scene(image, maxX, maxY);
         myStage.setScene(scene2);
         myStage.show();
